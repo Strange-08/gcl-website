@@ -126,6 +126,7 @@ p { margin: 0 0 1em; }
 @keyframes bankIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (max-width: 720px) {
   .banks-tools { flex-direction: column; align-items: stretch; }
+  .banks-tools > * { width: 100%; min-width: 0; max-width: 100%; }
   .banks-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .3rem; scrollbar-width: none; }
   .banks-tabs::-webkit-scrollbar { display: none; }
   .banks-tab { white-space: nowrap; }
