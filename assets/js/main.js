@@ -49,4 +49,39 @@ document.getElementById('enquiry').addEventListener('submit', function (e) {
   window.open('https://wa.me/918428057507?text=' + text, '_blank', 'noopener');
 });
 
+// Banks we serve: category tabs + search
+(function () {
+  var list = document.getElementById('bankList');
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.children);
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.banks-tab'));
+  var search = document.getElementById('bankSearch');
+  var empty = document.getElementById('bankEmpty');
+  var current = 'all';
+
+  tabs.forEach(function (t) {
+    var f = t.getAttribute('data-filter');
+    t.querySelector('span').textContent = f === 'all' ? items.length
+      : items.filter(function (li) { return li.getAttribute('data-cat') === f; }).length;
+    t.addEventListener('click', function () {
+      current = f;
+      tabs.forEach(function (x) { var on = x === t; x.classList.toggle('is-active', on); x.setAttribute('aria-pressed', on); });
+      apply();
+    });
+  });
+  search.addEventListener('input', apply);
+
+  function apply() {
+    var q = search.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (li, i) {
+      var ok = (current === 'all' || li.getAttribute('data-cat') === current) &&
+               (!q || li.textContent.toLowerCase().indexOf(q) !== -1);
+      li.hidden = !ok;
+      if (ok) { li.style.animationDelay = Math.min(shown, 12) * 30 + 'ms'; li.style.animationName = 'none'; li.offsetWidth; li.style.animationName = ''; shown++; }
+    });
+    empty.hidden = shown !== 0;
+  }
+})();
+
 document.getElementById('year').textContent = new Date().getFullYear();

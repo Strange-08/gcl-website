@@ -170,44 +170,60 @@
           <h2>Banks &amp; financial institutions we serve</h2>
           <p>We provide legal scrutiny reports and title opinions for loan files from the following banks, housing finance companies and NBFCs.</p>
         </div>
-        <ul class="banks reveal">
-          <li>State Bank of India</li>
-          <li>Bank of Baroda</li>
-          <li>Canara Bank</li>
-          <li>UCO Bank</li>
-          <li>Axis Bank</li>
-          <li>Federal Bank</li>
-          <li>South Indian Bank</li>
-          <li>IDFC FIRST Bank</li>
-          <li>Tamil Nadu Grama Bank</li>
-          <li>Equitas Small Finance Bank</li>
-          <li>Jana Small Finance Bank</li>
-          <li>Suryoday Small Finance Bank</li>
-          <li>Can Fin Homes</li>
-          <li>Repco Home Finance</li>
-          <li>Aadhar Housing Finance</li>
-          <li>India Shelter Finance</li>
-          <li>Piramal Finance</li>
-          <li>Cholamandalam Finance</li>
-          <li>Mahindra Finance</li>
-          <li>Tata Capital</li>
-          <li>IIFL Home Finance</li>
-          <li>Hinduja Housing Finance</li>
-          <li>Motilal Oswal Home Finance</li>
-          <li>Fedbank Financial Services</li>
-          <li>Truhome Finance</li>
-          <li>Vastu Housing Finance</li>
-          <li>Nido Home Finance</li>
-          <li>UGRO Capital</li>
-          <li>SI Creva Capital</li>
-          <li>Shubham Housing Finance</li>
-          <li>Niwas Housing Finance</li>
-          <li>Protium Finance</li>
-          <li>KreditBee</li>
-          <li>Unico</li>
-          <li>Asset</li>
-          <li>Grow XD</li>
+        <div class="banks-tools reveal">
+          <div class="banks-tabs" role="group" aria-label="Filter by type">
+            <button type="button" class="banks-tab is-active" data-filter="all" aria-pressed="true">All <span></span></button>
+            <button type="button" class="banks-tab" data-filter="psu" aria-pressed="false">Public Sector <span></span></button>
+            <button type="button" class="banks-tab" data-filter="private" aria-pressed="false">Private Banks <span></span></button>
+            <button type="button" class="banks-tab" data-filter="sfb" aria-pressed="false">Small Finance <span></span></button>
+            <button type="button" class="banks-tab" data-filter="hfc" aria-pressed="false">Housing Finance <span></span></button>
+            <button type="button" class="banks-tab" data-filter="nbfc" aria-pressed="false">NBFCs <span></span></button>
+          </div>
+          <label class="banks-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <input type="search" id="bankSearch" placeholder="Search your bank…" aria-label="Search banks">
+          </label>
+        </div>
+
+        <ul class="banks reveal" id="bankList">
+          <li data-cat="psu" style="--c:#22409a"><span class="banks__badge">SBI</span><span class="banks__name">State Bank of India</span><span class="banks__type">Public Sector Bank</span></li>
+          <li data-cat="psu" style="--c:#f15a22"><span class="banks__badge">BoB</span><span class="banks__name">Bank of Baroda</span><span class="banks__type">Public Sector Bank</span></li>
+          <li data-cat="psu" style="--c:#0a8fd1"><span class="banks__badge">CB</span><span class="banks__name">Canara Bank</span><span class="banks__type">Public Sector Bank</span></li>
+          <li data-cat="psu" style="--c:#1b4f9c"><span class="banks__badge">UCO</span><span class="banks__name">UCO Bank</span><span class="banks__type">Public Sector Bank</span></li>
+          <li data-cat="psu" style="--c:#2e7d32"><span class="banks__badge">TNGB</span><span class="banks__name">Tamil Nadu Grama Bank</span><span class="banks__type">Regional Rural Bank</span></li>
+          <li data-cat="private" style="--c:#97144d"><span class="banks__badge">AX</span><span class="banks__name">Axis Bank</span><span class="banks__type">Private Bank</span></li>
+          <li data-cat="private" style="--c:#004c8f"><span class="banks__badge">FB</span><span class="banks__name">Federal Bank</span><span class="banks__type">Private Bank</span></li>
+          <li data-cat="private" style="--c:#d2232a"><span class="banks__badge">SIB</span><span class="banks__name">South Indian Bank</span><span class="banks__type">Private Bank</span></li>
+          <li data-cat="private" style="--c:#9c1d26"><span class="banks__badge">IDFC</span><span class="banks__name">IDFC FIRST Bank</span><span class="banks__type">Private Bank</span></li>
+          <li data-cat="sfb" style="--c:#e8501e"><span class="banks__badge">EQ</span><span class="banks__name">Equitas Small Finance Bank</span><span class="banks__type">Small Finance Bank</span></li>
+          <li data-cat="sfb" style="--c:#00843d"><span class="banks__badge">JANA</span><span class="banks__name">Jana Small Finance Bank</span><span class="banks__type">Small Finance Bank</span></li>
+          <li data-cat="sfb" style="--c:#f08a00"><span class="banks__badge">SSF</span><span class="banks__name">Suryoday Small Finance Bank</span><span class="banks__type">Small Finance Bank</span></li>
+          <li data-cat="hfc" style="--c:#004b8d"><span class="banks__badge">CFH</span><span class="banks__name">Can Fin Homes</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#0d47a1"><span class="banks__badge">RHF</span><span class="banks__name">Repco Home Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#c62828"><span class="banks__badge">AHF</span><span class="banks__name">Aadhar Housing Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#f26522"><span class="banks__badge">ISF</span><span class="banks__name">India Shelter Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#0a3d8f"><span class="banks__badge">IIFL</span><span class="banks__name">IIFL Home Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#b3261e"><span class="banks__badge">HHF</span><span class="banks__name">Hinduja Housing Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#c99700"><span class="banks__badge">MO</span><span class="banks__name">Motilal Oswal Home Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#00897b"><span class="banks__badge">TH</span><span class="banks__name">Truhome Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#e65100"><span class="banks__badge">VHF</span><span class="banks__name">Vastu Housing Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#6a1b9a"><span class="banks__badge">NIDO</span><span class="banks__name">Nido Home Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#1565c0"><span class="banks__badge">SHF</span><span class="banks__name">Shubham Housing Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="hfc" style="--c:#388e3c"><span class="banks__badge">NHF</span><span class="banks__name">Niwas Housing Finance</span><span class="banks__type">Housing Finance</span></li>
+          <li data-cat="nbfc" style="--c:#0b2d6b"><span class="banks__badge">PF</span><span class="banks__name">Piramal Finance</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#1c3f94"><span class="banks__badge">CHOLA</span><span class="banks__name">Cholamandalam Finance</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#e31837"><span class="banks__badge">MF</span><span class="banks__name">Mahindra Finance</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#0067b1"><span class="banks__badge">TATA</span><span class="banks__name">Tata Capital</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#b8860b"><span class="banks__badge">FED</span><span class="banks__name">Fedbank Financial Services</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#ff5a00"><span class="banks__badge">UGRO</span><span class="banks__name">UGRO Capital</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#3949ab"><span class="banks__badge">SIC</span><span class="banks__name">SI Creva Capital</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#5e35b1"><span class="banks__badge">PRO</span><span class="banks__name">Protium Finance</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#f05a28"><span class="banks__badge">KB</span><span class="banks__name">KreditBee</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#2f5d50"><span class="banks__badge">UN</span><span class="banks__name">Unico</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#7a5c1e"><span class="banks__badge">AS</span><span class="banks__name">Asset</span><span class="banks__type">NBFC</span></li>
+          <li data-cat="nbfc" style="--c:#455a64"><span class="banks__badge">GXD</span><span class="banks__name">Grow XD</span><span class="banks__type">NBFC</span></li>
         </ul>
+        <p class="banks-empty" id="bankEmpty" hidden>No match found. Please <a href="#contact">contact us</a> — we may still be able to help with your bank.</p>
       </div>
     </section>
 
