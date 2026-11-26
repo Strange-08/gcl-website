@@ -101,6 +101,11 @@ p { margin: 0 0 1em; }
 .service li::before { content: ""; position: absolute; left: 0; top: .6em; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
 
 /* Why */
+.banks { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .75rem; }
+.banks li { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: .85rem 1rem .85rem 2.2rem; position: relative; font-weight: 600; font-size: .95rem; color: var(--ink); transition: border-color .3s; }
+.banks li::before { content: ""; position: absolute; left: 1rem; top: 50%; width: 8px; height: 8px; margin-top: -4px; background: var(--gold); transform: rotate(45deg); }
+.banks li:hover { border-color: var(--gold); }
+@media (max-width: 480px) { .banks { grid-template-columns: 1fr 1fr; } .banks li { font-size: .85rem; padding-left: 1.9rem; } .banks li::before { left: .8rem; } }
 .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .why__item { padding: 2rem; border: 1px solid var(--line); border-radius: var(--radius); transition: box-shadow .3s; }
 .why__item:hover { box-shadow: 0 12px 30px rgba(12,35,28,.08); }
