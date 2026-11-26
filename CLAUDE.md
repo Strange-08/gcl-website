@@ -18,3 +18,4 @@ Client website for an advocate's office in Chengalpattu. Plain static site: no b
 - Keep the Bar Council of India disclaimer popup; legally required for an advocate's site. No "best lawyer"-style claims, no client testimonials, no solicitation language.
 - The enquiry form opens WhatsApp (no server); keep it that way unless a form service is agreed.
 - Test on mobile width before pushing.
+- When `style.css` or `main.js` changes, bump the `?v=N` on their links in `index.html` so visitors don't get a stale cached copy.
